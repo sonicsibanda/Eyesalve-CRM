@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .forms import SignUpForm, AddRecordForm
 from .models import Record
+from django.db.models import Q
 
 # Create your views here.
 def home(request):
@@ -92,3 +93,19 @@ def update_record(request, pk):
     else:
         messages.success(request, "You Must Be Logged In...")
         return redirect('home')
+    
+def  search(request):
+    query = request.GET.get("q", "").strip()
+
+    results = []
+    if query:
+        results = Record.objects.filter(
+            Q(first_name__icontains=query) |
+            Q(last_name__icontains=query) |
+            Q(email__icontains=query)
+        )
+    return render(request, "search.html", {
+        "query": query,
+        "results": results,
+
+    })

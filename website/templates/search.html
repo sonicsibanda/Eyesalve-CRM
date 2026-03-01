@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Search Results</h1>
+
+{% if query %}
+    <p>Results for "{{ query }}"</p>
+
+    <ul class="list-group">
+        {% for record in results %}
+            <li class="list-group-item"><a href="{% url 'record' record.id %}">{{ record.first_name }} {{ record.last_name }} - {{ record.email }}</a></li>
+        {% empty %}
+            <li class="list-group-item">No Results Found</li>
+        {% endfor %}
+    </ul> 
+
+{% else %}
+    <p>Please enter a search term</p>
+{% endif %}
+
+
+{% endblock%}
