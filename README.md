@@ -6,7 +6,7 @@ Overview
 
 Eyesalve is developed with Django and provides a complete solution for eye care practices to streamline their appointment scheduling and patient management processes. The system helps optometrists and clinic staff efficiently manage patient information, track appointments, and maintain optical records.
 
-✨ Features
+Features
 
 Appointment Scheduling
 - Schedule, reschedule, and cancel appointments
