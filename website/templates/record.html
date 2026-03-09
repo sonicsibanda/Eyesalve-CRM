@@ -7,10 +7,12 @@
 <div class="card" style="width: 18rem;">
   <div class="card-body">
     <h5 class="card-title">{{ customer_record.first_name }} {{ customer_record.last_name }}</h5>
-    <h6 class="card-subtitle mb-2 text-body-secondary">Customer Profile</h6>
+    <h6 class="card-subtitle mb-2 text-body-secondary">Patient Profile</h6>
     <p class="card-text"><strong>Email: </strong>{{ customer_record.email }}<br/>
         <strong>City: </strong>{{ customer_record.city }}<br/>
-        <strong>Address: </strong>{{ customer_record.address }}
+        <strong>Address: </strong>{{ customer_record.address }}<br/>
+        <strong>Condition: </strong>{{ customer_record.condition }}<br/>
+        <strong>Appointment: </strong>{{ customer_record.appointment_time }}<br/>
 </p>
     <a href="{% url 'home' %}" class="btn btn-outline-secondary" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-xL .5rem; --bs-btn-font-size: .75rem;">Back</a>
     <a href="{% url 'delete_record' customer_record.id %}" class="btn btn-outline-danger" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-xL .5rem; --bs-btn-font-size: .75rem;">Delete</a>

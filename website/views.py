@@ -74,11 +74,11 @@ def add_record(request):
         if request.method == 'POST':
             if form.is_valid():
                 add_record = form.save()
-                messages.success(request, "Booking Added...")
+                messages.success(request, "Booking Added!")
                 return redirect('home')
         return render(request, 'add_record.html', {'form':form})
     else:
-        messages.success(request, "You Must Be Logged In...")
+        messages.success(request, "You Must Be Logged In.")
         return redirect('home')
     
 def update_record(request, pk):
@@ -91,7 +91,7 @@ def update_record(request, pk):
             return redirect('home')
         return render(request, 'update_record.html', {'form':form})
     else:
-        messages.success(request, "You Must Be Logged In...")
+        messages.success(request, "You Must Be Logged In.")
         return redirect('home')
     
 def  search(request):

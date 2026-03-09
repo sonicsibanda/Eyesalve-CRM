@@ -16,6 +16,8 @@
       <th scope="col">Email</th>
       <th scope="col">City</th>
       <th scope="col">Address</th>
+      <th scope="col">Condition</th>
+      <th scope="col">Appointment Time</th>
     </tr>
   </thead>
   <tbody>
@@ -28,6 +30,8 @@
         <td>{{ record.email }}</td>
         <td>{{ record.city }}</td>
         <td>{{ record.address }}</td>
+        <td>{{ record.condition }}</td>
+        <td>{{ record.appointment_time }}</td>
       </tr>
       {% endfor %}
     {% endif %}

@@ -39,6 +39,9 @@ class AddRecordForm(forms.ModelForm):
     phone = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"Phone", "class":"form-control"}), label="")
     address = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"Address", "class":"form-control"}), label="")
     city = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"City", "class":"form-control"}), label="")
+    condition = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"Condition", "class":"form-control"}), label="")
+    appointment_time = forms.DateTimeField(required=True, widget=forms.widgets.DateTimeInput(attrs={"placeholder":"09:00", "class":"form-control"}), label="")
+
 
     class Meta:
         model = Record
